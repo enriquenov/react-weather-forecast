@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class DailyForecast extends React.Component{
-   
+
     dateIsToday(date){
         const today = new Date();
         return date.getFullYear() == today.getFullYear() &&
@@ -27,7 +27,7 @@ export default class DailyForecast extends React.Component{
     getFormattedTime(dt_txt){
         return dt_txt.split(' ')[1].substring(0,5);
     }
-    
+
     groupDayForecasts(items){
         const dayGroup = {};
         let currentDay = null;
@@ -40,7 +40,7 @@ export default class DailyForecast extends React.Component{
                 currentDay = day;
                 dayGroup [day] = new Array();
             }
-            
+
             dayGroup[day].push(items[i]);
         }
 
@@ -52,7 +52,7 @@ export default class DailyForecast extends React.Component{
 
         return(
             <div className='daily-forecast'>
-                <h2>Daily hourly forecast for {this.props.forecast.city.name}, {this.props.forecast.city.country}</h2>
+                <h2>Daily forecast for <span>{this.props.forecast.city.name}, {this.props.forecast.city.country}</span></h2>
 
                 <table className='day-forecast-table'>
                     {Object.keys(days).map((forecastItem)=>{
@@ -71,14 +71,14 @@ export default class DailyForecast extends React.Component{
                                                 <img src={'https://openweathermap.org/img/w/' +
                                                     item.weather[0].icon + '.png'} />
                                             </td>
-                                        
+
                                             <td>
                                                 {this.getFormattedTime(item.dt_txt)}
                                             </td>
                                             <td className='forecast-description'>
                                                 {item.weather[0].description}
                                             </td>
-                                        
+
                                             <td className='forecast-details'>
                                                 <p className='forecast-temp'>{Math.floor(item.main.temp)} °{this.props.unit}</p>
                                                 <p> {item.wind.speed}mph  clouds: {item.clouds.all}%  {item.main.pressure} hpa

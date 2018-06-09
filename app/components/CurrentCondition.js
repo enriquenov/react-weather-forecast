@@ -16,17 +16,17 @@ export default class CurrentCondition extends React.Component{
     formatDescription(text){
         return text.charAt(0).toUpperCase() + text.slice(1);
     }
-    
+
     render(){
         const forecast = this.props.forecast;
 
         return(
             <div className='current-condition'>
-               
-                <h2>Weather in {forecast.name}, {forecast.sys.country}</h2>
+
+                <h2>Current weather in <span>{forecast.name}, {forecast.sys.country}</span></h2>
 
                 <div className='current-temperature'>
-                    <img src={'https://openweathermap.org/img/w/' + 
+                    <img src={'https://openweathermap.org/img/w/' +
                         forecast.weather[0].icon + '.png'}/>
                     <p>{Math.floor(forecast.main.temp)} °{this.props.unit}</p>
                 </div>

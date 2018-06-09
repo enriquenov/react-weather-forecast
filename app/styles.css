@@ -18,6 +18,10 @@ h1, h2, h3{
   font-family: 'Roboto', sans-serif;
 }
 
+h2 span {
+  color: #FFC055;
+}
+
 .app-container{
   max-width: 1050px;
   margin: 0 auto;
