@@ -31,7 +31,7 @@ export default class App extends React.Component{
     onUnitChanged(unit){
         this.setState({unit}, this.updateCurrentWeather);
     }
-    
+
     updateCurrentWeather(){
          this.setState(()=>{
             return {
@@ -41,7 +41,7 @@ export default class App extends React.Component{
                  extended: null
             }
          });
-         
+
         api.getWeatherForecast(this.state.city, this.state.unit)
             .then((response)=>{
                     this.setState(()=>{
@@ -64,7 +64,8 @@ export default class App extends React.Component{
         return(
             <div className='container app-container'>
                 <div className='row'>
-                    <div className='col-12'>
+                    <div className='col-12 text-center'>
+                      <h1>React Weather Forecaster</h1>
                       <SearchBox onSubmitCity = {this.handleSearchSubmit}/>
                     </div>
                 </div>
@@ -86,7 +87,7 @@ export default class App extends React.Component{
                     <Loading />
                 }
 
-                {this.state.error && 
+                {this.state.error &&
                     <p style={{textAlign:'center', marginTop:30}}>There was an error getting forecast for {this.state.city}. Make sure the city is valid</p>
                 }
               </div>

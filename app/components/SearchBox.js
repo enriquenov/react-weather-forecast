@@ -25,8 +25,8 @@ export default class SearchBox extends React.Component{
         return (
             <form className='search-box' onSubmit={this.handleSubmit}>
                 <input id='search-input'
-                       placeholder='City name'
-                       value={this.state.city} 
+                       placeholder='Enter a city name'
+                       value={this.state.city}
                        onChange={this.onCityInputChange}
                        autoComplete='off'
                        autoFocus/>
