@@ -27,12 +27,13 @@ export default class CurrentCondition extends React.Component{
 
                 <div className='current-temperature'>
                     <img src={'https://openweathermap.org/img/w/' +
-                        forecast.weather[0].icon + '.png'}/>
+                    forecast.weather[0].icon + '.png'}/>
                     <p>{Math.floor(forecast.main.temp)} °{this.props.unit}</p>
+
                 </div>
 
-                <p> {this.formatDescription(forecast.weather[0].description)} </p>
-                <p> {this.getFormattedTime()} {this.getCurrentDate()}</p>
+                <p className="center"> {this.formatDescription(forecast.weather[0].description)} </p>
+                <p className="center"> {this.getFormattedTime()} {this.getCurrentDate()}</p>
                 <table className='current-conditions-details'>
                     <tbody>
                          <tr>
