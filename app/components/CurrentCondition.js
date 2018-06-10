@@ -10,7 +10,8 @@ export default class CurrentCondition extends React.Component{
     getCurrentDate(){
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const now = new Date();
-        return months [ now.getUTCMonth() ] + " " + now.getUTCDate() ;
+
+        return months [ now.getUTCMonth() ] + " " + now.getDate() ;
     }
 
     formatDescription(text){

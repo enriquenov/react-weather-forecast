@@ -93,12 +93,10 @@ input:focus, button:focus{
   border-radius: 50%;
   width: 16px;
   height: 16px;
-
   border: 2px solid #999;
   transition: 0.2s all linear;
   outline: none;
   margin-right: 5px;
-
   position: relative;
   top: 4px;
 }
@@ -120,7 +118,7 @@ input:focus, button:focus{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 15px auto 0;
+  margin: 15px auto;
   padding: 25px 0 15px;
   width: 55%;
 }
